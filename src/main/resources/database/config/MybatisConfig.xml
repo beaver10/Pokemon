@@ -3,4 +3,18 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-config.dtd">
   
+  <configuration>
+	<typeAliases>  
+   		<typeAlias type="java.lang.Long" alias="Long"/>
+   		
+   		<typeAlias type="com.iu.s2.pokemon.NoticeDTO" alias="NoticeDTO"/>
+   		
+   		<typeAlias type="com.iu.s2.pokemon.TrainverDTO" alias="TrainerDTO"/>
+   		
+   		
+   		<typeAlias type="com.iu.s2.util.Pager1" alias="Pager1"/>
+   		
+  	</typeAliases>
+  
+  </configuration>
  
