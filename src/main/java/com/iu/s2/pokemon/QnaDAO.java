@@ -17,7 +17,7 @@ public class QnaDAO {
 	private SqlSession sqlSession;
 	private final String NAMESPACE = "com.iu.s2.pokemon.QnaDAO,";
 	
-	public Long getQnaCount()throws Exception{
+	public Long getQnaCount(Pager1 pager1)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getQnaCount", NAMESPACE);
 	}
 	
