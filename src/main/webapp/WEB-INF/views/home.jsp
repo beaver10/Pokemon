@@ -12,7 +12,7 @@ pageEncoding="UTF-8"%>
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
-<a href="./trainer/join">조인</a>
+<!-- <a href="./trainer/join">조인</a> -->
 
 </body>
 </html>
