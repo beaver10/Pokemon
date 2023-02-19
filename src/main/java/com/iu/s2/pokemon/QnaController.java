@@ -55,7 +55,7 @@ public class QnaController {
 	@RequestMapping(value = "add", method = RequestMethod.POST) 
 	public ModelAndView getQnaADdd(QnaDTO qnaDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
-		
+		qnaService.setQnaAdd(qnaDTO);
 		mv.setViewName("redirect:./list");
 		
 		return mv;
@@ -76,7 +76,7 @@ public class QnaController {
 	public ModelAndView setQnaUpdate(QnaDTO qnaDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		qnaDTO = qnaService.getQnaDetail(qnaDTO);
-		mv.setViewName("bankBook/update");
+		mv.setViewName("qna/update");
 		mv.addObject("dto", qnaDTO);
 		
 		return mv;

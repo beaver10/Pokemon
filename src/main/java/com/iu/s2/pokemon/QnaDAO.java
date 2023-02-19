@@ -23,23 +23,23 @@ public class QnaDAO {
 	
 	//getQnaList
 	public List<QnaDTO> getQnaList(Pager1 pager1)throws Exception {
-		return sqlSession.selectList(NAMESPACE+"getBankBookList",pager1);
+		return sqlSession.selectList(NAMESPACE+"getQnaList",pager1);
 	}
 	//getQnaDetail
 	public QnaDTO getQnaDetail(QnaDTO qnaDTO) throws Exception {
-		 return sqlSession.selectOne(NAMESPACE+"getBankBookDetail", qnaDTO);
+		 return sqlSession.selectOne(NAMESPACE+"getQnaDetail", qnaDTO);
 	 }
 	//setQnaAdd
 	public int setQnaAdd(QnaDTO qnaDTO)throws Exception{
-		return sqlSession.insert(NAMESPACE+"setBankBookAdd",qnaDTO );
+		return sqlSession.insert(NAMESPACE+"setQnaAdd",qnaDTO );
 	}
 	//setQnaUpdate
 	public int setQnaUpdate(QnaDTO qnaDTO)throws Exception{
-		return sqlSession.update(NAMESPACE+"setBankBookUpdate", qnaDTO);
+		return sqlSession.update(NAMESPACE+"setQnaUpdate", qnaDTO);
 	}
 	//setQnaDelete
 	public int setQnaDelete(QnaDTO qnaDTO) throws Exception{
-		return sqlSession.delete(NAMESPACE+"setBankBookDelete",qnaDTO);
+		return sqlSession.delete(NAMESPACE+"setQnaDelete",qnaDTO);
 	}
 	
 }
