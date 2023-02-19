@@ -8,14 +8,13 @@ import org.springframework.stereotype.Repository;
 
 import com.iu.s2.util.Pager1;
 
-//import com.iu.si.bankbook.BankBookDTO;
-//import com.iu.si.util.Pager;
+
 @Repository
 public class QnaDAO {
 
 	@Autowired
 	private SqlSession sqlSession;
-	private final String NAMESPACE = "com.iu.s2.pokemon.QnaDAO,";
+	private final String NAMESPACE = "com.iu.s2.pokemon.QnaDAO.";
 	
 	public Long getQnaCount(Pager1 pager1)throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getQnaCount", NAMESPACE);
