@@ -10,8 +10,7 @@ pageEncoding="UTF-8"%>
 </head>
 <body>
 <c:import url="./template/header.jsp"></c:import>
-
-
+<div class="main-visual" id="top">
 <h1>
 	Hello world!  
 </h1>
@@ -19,9 +18,7 @@ pageEncoding="UTF-8"%>
 <P>  The time on the server is ${serverTime}. </P>
  <a href="./trainer/join">조인</a> 
 
-
-
-
+</div>
 <c:import url="./template/common_js.jsp"></c:import>
 </body>
 </html>
