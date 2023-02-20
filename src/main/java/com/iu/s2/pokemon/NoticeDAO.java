@@ -23,7 +23,22 @@ public class NoticeDAO {
 	public List<NoticeDTO> getNoticeList(Pager1 pager1) throws Exception{
 		return sqlSession.selectList(NAMESPACE+"getNoticeList", pager1);
 	}
-	
+
+	public NoticeDTO getNoticeDetail(NoticeDTO noticeDTO) throws Exception {
+		 return sqlSession.selectOne(NAMESPACE+"getNoticeDetail", noticeDTO);
+	 }
+
+	public int setNoticeAdd(NoticeDTO noticeDTO)throws Exception{
+		return sqlSession.insert(NAMESPACE+"setNoticeAdd", noticeDTO);
+	}
+
+	public int setNoticeUpdate(NoticeDTO noticeDTO)throws Exception{
+		return sqlSession.update(NAMESPACE+"setNoticeUpdate", noticeDTO);
+	}
+
+	public int setQnaDelete(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE+"setQnaDelete",qnaDTO);
+	}	
 	
 	
 

@@ -9,7 +9,7 @@
     </button>
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
  		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			<li class="nav-item "><a class="nav-link active" href="#">공지사항</a></li>
+			<li class="nav-item "><a class="nav-link active" href="/notice/list">공지사항</a></li>
 			
 			<li class="nav-item "><a class="nav-link active" href="/qna/list">Q&A</a></li>
 			<li class="nav-item "><a class="nav-link active" href="https://pokemonkorea.co.kr/pokedex">포켓몬 도감</a></li>
