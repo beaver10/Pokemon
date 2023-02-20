@@ -10,20 +10,20 @@
      <div class="collapse navbar-collapse" id="navbarSupportedContent">
  		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			<li class="nav-item "><a class="nav-link active" href="#">공지사항</a></li>
-			
+			<li class="nav-item "><a class="nav-link active" href="/notice/list">Notice</a></li>
 			<li class="nav-item "><a class="nav-link active" href="/qna/list">Q&A</a></li>
 			<li class="nav-item "><a class="nav-link active" href="https://pokemonkorea.co.kr/pokedex">포켓몬 도감</a></li>
 			
 		</ul>
 			
 		<ul class="navbar-nav">
-			<c:if test="${empty member}">
-			<li class="nav-item"><a class="nav-link" href="/member/memberLogin">LOGIN</a></li>
-			<li class="nav-item"><a class="nav-link" href="/member/memberJoin">JOIN</a></li>
+			<c:if test="${empty trainer}">
+			<li class="nav-item"><a class="nav-link" href="/trainer/login">LOGIN</a></li>
+			<li class="nav-item"><a class="nav-link" href="/trainer/join">JOIN</a></li>
 			</c:if>
-			<c:if test="${not empty member}">
-			<li class="nav-item"><a class="nav-link" href="/member/memberPage">MYPAGE</a></li>
-			<li class="nav-item"><a class="nav-link" href="/member/memberLogout">LOGOUT</a></li>
+			<c:if test="${not empty trainer}">
+			<li class="nav-item"><a class="nav-link" href="/trainer/page">MYPAGE</a></li>
+			<li class="nav-item"><a class="nav-link" href="/trainer/logout">LOGOUT</a></li>
 			</c:if>
 			<li class="nav-item"><a class="nav-link" href="#">KO</a></li>
 			<li class="nav-item"><a class="nav-link" href="#">EN</a></li>

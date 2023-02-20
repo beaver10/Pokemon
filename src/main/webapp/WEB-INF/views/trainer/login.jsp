@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +11,11 @@
 </head>
 <body>
 <c:import url="../template/header.jsp"></c:import>
-
+	
 <div class="container -fluid my-5  ">		 
-	<h1 class="text-center">Member Join</h1>
+	<h1 class="text-center">Trainer Login</h1>
 	<div class="col-6 my-4  mx-auto">
-		<form action="./memberJoin" method="post">
-		
+		<form action="./login" method="post">
 		<!--id  -->
 		 <div class="form-outline mb-4">
           <input type="text" id="id" class="form-control" name="id">
@@ -50,7 +50,14 @@
 		</form>
 	</div>
 	
-</div>	
+</div>
+
+
+
+
+
+
+
 <c:import url="../template/common_js.jsp"></c:import>
 </body>
 </html>
