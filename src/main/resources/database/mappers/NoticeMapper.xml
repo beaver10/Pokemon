@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper은 DAO가 호출  -->
+<mapper namespace="com.iu.s2.pokemon.NoticeDAO">
+ <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--> 
+    <select id="getNoticeCount" parameterType="pager1" resultType="Long">
+  	 SELECT COUNT(NOTICENUM) FROM NOTICE
+	   	<if test="kind == 'contents'">
+	   	 	 WHERE NOTICEDETAIL   LIKE  '%' || #{search} || '%'
+	   	 </if>
+	   	 
+	   	 <if test="kind == 'title'">
+	   	 	WHERE NOTICENAME  LIKE  '%' || #{search} || '%'
+	   	 </if>
+   </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <select id ="getNoticeList" parameterType="Pager1" resultType="NoticeDTO" statementType="PREPARED"> 
+    SELECT * FROM 
+		(
+			SELECT ROWNUM R,N.* FROM 
+				(
+					SELECT * FROM  NOTICE
+					 <if test="kind == 'contents'">
+   	 				 	WHERE NOTICEDETAIL   LIKE  '%' || #{search} || '%'
+				   	 </if>
+				   	 
+				   	 <if test="kind == 'title'">
+				   	 	WHERE NOTICENAME  LIKE  '%' || #{search} || '%'
+				   	 </if>
+					ORDER BY NOTICENUM DESC
+				) N
+		)
+	WHERE  R BETWEEN  #{startRow} AND #{lastRow}
+    </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
+    <select id="getNoticeDetail" parameterType="NoticeDTO" resultType="NoticeDTO">
+    SELECT *    
+    FROM NOTICE
+    WHERE NOTICENUM = #{noticeNum}
+    </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
+     <delete id="setNoticeDelete" parameterType="Long">
+     DELETE NOTICE WHERE QNANUM = #{noticeNum}
+     </delete>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
+     <insert id="setNoticeAdd" parameterType="NoticeDTO" > 
+      INSERT INTO NOTICE
+      VALUES (NOTICE_SEQ.NEXTVAL,#{noticeName},#{noticeDetail},#{id},#{day},#{viewTotal})
+     </insert>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
+     <update id="setNoticeUpdate" parameterType="NoticeDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
+     	UPDATE QNA SET NOTICENAME=#{noticeName}, NOTICEDETAIL=#{noticeDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
+		WHERE NOTICENUM=#{noticeNum}     
+     </update>
+       </mapper>

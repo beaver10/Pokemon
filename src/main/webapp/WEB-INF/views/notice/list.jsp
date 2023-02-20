@@ -16,8 +16,7 @@
 	<div class="row mb-4 border-bottom border-dark">
 		<h1 class="col-md-7 mx-auto text-center pb-4">NOTICE</h1>
 	</div>
-		
-	<div class="row col-md-7 mx-auto">
+
 		<table class="table table-hover"> 
 		   <thead>
 		      <tr>
@@ -33,7 +32,7 @@
 		   
 		   <c:forEach items="${list}" var="dto">
 			   <tr>
-			      <td><a href="./detail?qnaNum=${dto.qnaNum}">${pageScope.dto.noticeNum}</a></td>
+			      <td><a href="./detail?noticeNum=${dto.noticeNum}">${pageScope.dto.noticeNum}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.noticeName}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.noticeDetail}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.id}</a></td>
@@ -48,19 +47,19 @@
 		<div class="row">
 			<nav aria-label="Page navigation example">
 				  <ul class="pagination" >
-				    <li class="page-item" ${pager.before?'disabled':''}>
-				      <a class="page-link" href="./list?page=${pager.startNum-1}&kind=${pager.kind}&search=${pager.search}" aria-label="Previous">
+				    <li class="page-item" ${pager1.before?'disabled':''}>
+				      <a class="page-link" href="./list?page=${pager1.startNum-1}&kind=${pager1.kind}&search=${pager1.search}" aria-label="Previous">
 				        <span aria-hidden="true">&laquo;</span>
 				      </a>
 				    </li>
 				    
-				    <c:forEach begin="${pager.startNum}" end="${pager.lastNum}" var="i">
-				    	<li class="page-item"><a class="page-link" href="./list?page=${i}&kind=${pager.kind}&search=${pager.search}">${i}</a></li>
+				    <c:forEach begin="${pager1.startNum}" end="${pager1.lastNum}" var="i">
+				    	<li class="page-item"><a class="page-link" href="./list?page=${i}&kind=${pager1.kind}&search=${pager1.search}">${i}</a></li>
 				    </c:forEach>
 				    
 				    
-				    <li class="page-item" ${pager.after eq false ? 'disabled' : '' }>
-				      <a class="page-link"  href="./list?page=${pager.lastNum+1}&kind=${pager.kind}&search=${pager.search}"  aria-label="Next">
+				    <li class="page-item" ${pager1.after eq false ? 'disabled' : '' }>
+				      <a class="page-link"  href="./list?page=${pager1.lastNum+1}&kind=${pager1.kind}&search=${pager1.search}"  aria-label="Next">
 				        <span aria-hidden="true">&raquo;</span>
 				      </a>
 				    </li>
@@ -94,12 +93,9 @@
 		</div>
 			
 		
+		<a href="./add" class="btn btn-primary col-2">글등록</a>
 	
 	</div>
-	<div class="row col-md-7 mx-auto">
-		<a href="./add" class="btn btn-primary col-2">글등록</a>
-	</div>
-</div>
 		<c:import url="../template/common_js.jsp"></c:import>
 		</body>
 </html>

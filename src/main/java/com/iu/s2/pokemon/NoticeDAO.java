@@ -13,10 +13,10 @@ public class NoticeDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	private final String NAMESPACE = "com.iu.s2.pokemon.Notice.";
+	private final String NAMESPACE = "com.iu.s2.pokemon.NoticeDAO.";
 	
 	
-	public Long getNoticeCount(Pager1 pager1) {
+	public Long getNoticeCount(Pager1 pager1) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"getNoticeCount", pager1);
 	}
 	
@@ -36,8 +36,8 @@ public class NoticeDAO {
 		return sqlSession.update(NAMESPACE+"setNoticeUpdate", noticeDTO);
 	}
 
-	public int setQnaDelete(QnaDTO qnaDTO) throws Exception{
-		return sqlSession.delete(NAMESPACE+"setQnaDelete",qnaDTO);
+	public int setNoticeDelete(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.delete(NAMESPACE+"setNoticeDelete",noticeDTO);
 	}	
 	
 	
