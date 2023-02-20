@@ -5,7 +5,7 @@
 <!--Mapper은 DAO가 호출  -->
 <mapper namespace="com.iu.s2.pokemon.QnaDAO">
  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--> 
-   <select id="getQnaCount" parameterType="pager1" resultType="Long">
+    <select id="getQnaCount" parameterType="pager1" resultType="Long">
   	 SELECT COUNT(QNANUM) FROM QNA
 	   	<if test="kind == 'contents'">
 	   	 	 WHERE QNADETAIL   LIKE  '%' || #{search} || '%'
@@ -21,15 +21,15 @@
 		(
 			SELECT ROWNUM R,Q.* FROM 
 				(
-					SELECT * FROM  QUE
+					SELECT * FROM  QNA
 					 <if test="kind == 'contents'">
-   	 				 	WHERE QUEDETAIL   LIKE  '%' || #{search} || '%'
+   	 				 	WHERE QNADETAIL   LIKE  '%' || #{search} || '%'
 				   	 </if>
 				   	 
 				   	 <if test="kind == 'title'">
-				   	 	WHERE QUENAME  LIKE  '%' || #{search} || '%'
+				   	 	WHERE QNANAME  LIKE  '%' || #{search} || '%'
 				   	 </if>
-					ORDER BY QUENUM DESC
+					ORDER BY QNANUM DESC
 				) Q
 		)
 	WHERE  R BETWEEN  #{startRow} AND #{lastRow}
@@ -37,8 +37,8 @@
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
     <select id="getQnaDetail" parameterType="QnaDTO" resultType="QnaDTO">
     SELECT *    
-    FROM QUE
-    WHERE QUENUM = #{qnaNum}
+    FROM QNA
+    WHERE QNANUM = #{qnaNum}
     </select>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
      <delete id="setQnaDelete" parameterType="Long">
@@ -47,7 +47,7 @@
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
      <insert id="setQnaAdd" parameterType="QnaDTO" > 
       INSERT INTO QNA
-      VALUES (QNA_SEQ.NEXTVAL,#{qnaNum},#{qnaName},#{qnaDetail},#{id},#{day},#{viewTotal})
+      VALUES (QNA_SEQ.NEXTVAL,#{qnaName},#{qnaDetail},#{id},#{day},#{viewTotal})
      </insert>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
      <update id="setQnaUpdate" parameterType="QnaDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
