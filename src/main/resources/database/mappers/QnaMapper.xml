@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper은 DAO가 호출  -->
+<mapper namespace="com.iu.s2.pokemon.QnaDAO">
+ <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--> 
+   <select id="getQnaCount" parameterType="pager1" resultType="Long">
+  	 SELECT COUNT(QNANUM) FROM QNA
+	   	<if test="kind == 'contents'">
+	   	 	 WHERE QNADETAIL   LIKE  '%' || #{search} || '%'
+	   	 </if>
+	   	 
+	   	 <if test="kind == 'title'">
+	   	 	WHERE QNANAME  LIKE  '%' || #{search} || '%'
+	   	 </if>
+   </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <select id ="getQnaList" parameterType="Pager1" resultType="QnaDTO" statementType="PREPARED"> 
+    SELECT * FROM 
+		(
+			SELECT ROWNUM R,Q.* FROM 
+				(
+					SELECT * FROM  QUE
+					 <if test="kind == 'contents'">
+   	 				 	WHERE QUEDETAIL   LIKE  '%' || #{search} || '%'
+				   	 </if>
+				   	 
+				   	 <if test="kind == 'title'">
+				   	 	WHERE QUENAME  LIKE  '%' || #{search} || '%'
+				   	 </if>
+					ORDER BY QUENUM DESC
+				) Q
+		)
+	WHERE  R BETWEEN  #{startRow} AND #{lastRow}
+    </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
+    <select id="getQnaDetail" parameterType="QnaDTO" resultType="QnaDTO">
+    SELECT *    
+    FROM QUE
+    WHERE QUENUM = #{qnaNum}
+    </select>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
+     <delete id="setQnaDelete" parameterType="Long">
+     DELETE QNA WHERE QNANUM = #{qnaNum}
+     </delete>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
+     <insert id="setQnaAdd" parameterType="QnaDTO" > 
+      INSERT INTO QNA
+      VALUES (QNA_SEQ.NEXTVAL,#{qnaNum},#{qnaName},#{qnaDetail},#{id},#{day},#{viewTotal})
+     </insert>
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
+     <update id="setQnaUpdate" parameterType="QnaDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
+     	UPDATE QNA SET QNANAME=#{qnaName}, QNADETAIL=#{qnaDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
+		WHERE QNANUM=#{qnaNum}     
+     </update>
+       
+</mapper>
+

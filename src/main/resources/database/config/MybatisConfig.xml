@@ -11,6 +11,7 @@
    		
    		<typeAlias type="com.iu.s2.pokemon.TrainverDTO" alias="TrainerDTO"/>
    		
+   		<typeAlias type="com.iu.s2.pokemon.QnaDTO" alias="QnaDTO"/>
    		
    		<typeAlias type="com.iu.s2.util.Pager1" alias="Pager1"/>
    		

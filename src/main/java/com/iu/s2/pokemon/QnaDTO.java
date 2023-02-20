@@ -7,12 +7,19 @@ public class QnaDTO {
 	private Integer qnaNum;
 	private String qnaName;
 	private String qnaDetail;
+	private String id;
 	private DATE day;
 	private Integer viewTotal;
 	private TrainerDTO trainerDTO;
 	
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public Integer getQnaNum() {
 		return qnaNum;
 	}
