@@ -18,7 +18,7 @@
 <body>
   <c:import url="../template/header.jsp"></c:import>
    <div class="container fluid my-5">
-	<h1>member page</h1>
+	<h1>Trainer page</h1>
 	<section class="pb-4">
  	<div class="bg-white border rounded-5">
     
@@ -34,7 +34,7 @@
 					</div>
 
 					<br>
-					<a href="./trianerUpdate"  button type="submit" class="btn btn-primary">수정하기</a>
+					<a href="./trainerUpdate"  button type="submit" class="btn btn-primary">수정하기</a>
 					
 				</form>
 		</section>

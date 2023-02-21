@@ -20,7 +20,7 @@
 <body>
   <c:import url="../template/header.jsp"></c:import>
    <div class="container fluid my-5">
-	<h1>member join</h1>
+	<h1>Trainer join</h1>
 	<section class="pb-4">
   <div class="bg-white border rounded-5">
     

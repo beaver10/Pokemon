@@ -19,7 +19,7 @@
   
   <update id="setTrainerUpdate" parameterType="TrainerDTO">
   	UPDATE trainer
-  	SET trainerid = #{id}, trainerpw = #{pw}
+  	SET id = #{id}, pw = #{pw}
 	WHERE ID = #{id} 
   </update>  
   
