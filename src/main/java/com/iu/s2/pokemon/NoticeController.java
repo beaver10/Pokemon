@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.iu.s2.util.Pager1;
 
 @Controller
-@RequestMapping (value = "/pokemon/notice/*")
+@RequestMapping (value = "/notice/*")
 public class NoticeController {
 	
 	@Autowired
@@ -24,11 +24,75 @@ public class NoticeController {
 		
 		List<NoticeDTO> ar = noticeService.getNoticeList(pager1);
 		
-		mv.setViewName("pokemon/list");
+		mv.setViewName("notice/list");
 		mv.addObject("list", ar);
 		mv.addObject("pager1", pager1);
 		return mv;
 	}
+	
+	//detail
+	@RequestMapping(value = "detail", method = RequestMethod.GET) 
+	public ModelAndView getNoiceDetail(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		
+		noticeDTO = noticeService.getNoticeDetail(noticeDTO);
+		
+		mv.setViewName("notice/detail");
+		mv.addObject("dto",noticeDTO);
+		
+		return mv;
+	}
+	//add(get)
+	@RequestMapping(value = "add", method = RequestMethod.GET) 
+	public ModelAndView getNoticeAdd(ModelAndView mv)throws Exception{
+		
+		mv.setViewName("notice/add");
+		
+		return mv;
+	}
+	//add(post)
+	@RequestMapping(value = "add", method = RequestMethod.POST) 
+	public ModelAndView getNoticeADdd(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		noticeService.setNoticeAdd(noticeDTO);
+		mv.setViewName("redirect:./list");
+		
+		return mv;
+	}
+	//delete
+	@RequestMapping(value = "delete", method = RequestMethod.GET)
+	public ModelAndView setNoticeDelete(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setNoticeDelete(noticeDTO);
+		
+		mv.setViewName("redirect:./list");
+		
+		return mv;
+	}
+	
+	//update(get)
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public ModelAndView setNoticeUpdate(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		noticeDTO = noticeService.getNoticeDetail(noticeDTO);
+		mv.setViewName("notice/update");
+		mv.addObject("dto", noticeDTO);
+		
+		return mv;
+	}
+	//update(post)
+	@RequestMapping(value = "update", method = RequestMethod.POST)
+	public ModelAndView setNoticedate(NoticeDTO noticeDTO) throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setNoticeUpdate(noticeDTO);
+			
+		mv.setViewName("redirect:./list");
+			
+		return mv;
+	}
+	
+	
+	
 	
 	
 

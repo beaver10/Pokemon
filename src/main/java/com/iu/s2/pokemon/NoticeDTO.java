@@ -8,6 +8,7 @@ public class NoticeDTO {
 	private Integer noticeNum;
 	private String noticeName;
 	private String noticeDetail;
+	private String id;
 	private Date day;
 	private Integer viewTotal;
 	private TrainerDTO trainerDTO;
@@ -18,6 +19,12 @@ public class NoticeDTO {
 	
 	
 	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
 	public TrainerDTO getTrainerDTO() {
 		return trainerDTO;
 	}
