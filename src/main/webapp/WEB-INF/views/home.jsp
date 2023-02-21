@@ -15,7 +15,7 @@ pageEncoding="UTF-8"%>
 <c:import url="./template/header.jsp"></c:import>
   <div class="container-fluid my-5">
 	  <div class="row col-md-6 offset-md-3">
-	  <h1>밖은 위험하단다</h1>
+	  <h1>${trainer.id } 밖은 위험하단다</h1>
 	 	<h1>포켓몬 한마리를 데려가렴</h1>
 	 	<div class="row col-md-4 offset-md-5">
 	 	<img src="https://w.namu.la/s/8b2fc8caebbd310d8e032f9a4c93708f4e87eeb3be447757002a6cb6ff72657704be37b0cf26568e8dd0c02ec0b6c4399588ef26280a61da4ff97c951a57e8ceff51361a0a3909cfb240dc049508c1bd92279582fa4de16eb5ac9a07969034f7" class="">

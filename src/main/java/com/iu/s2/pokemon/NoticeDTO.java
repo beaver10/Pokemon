@@ -5,12 +5,12 @@ import java.sql.Date;
 
 public class NoticeDTO {
 	
-	private Integer noticeNum;
+	private Long noticeNum;
 	private String noticeName;
 	private String noticeDetail;
 	private String id;
 	private Date day;
-	private Integer viewTotal;
+	private Long viewTotal;
 	private TrainerDTO trainerDTO;
 	
 
@@ -31,10 +31,10 @@ public class NoticeDTO {
 	public void setTrainerDTO(TrainerDTO trainerDTO) {
 		this.trainerDTO = trainerDTO;
 	}
-	public Integer getNoticeNum() {
+	public Long getNoticeNum() {
 		return noticeNum;
 	}
-	public void setNoticeNum(Integer noticeNum) {
+	public void setNoticeNum(Long noticeNum) {
 		this.noticeNum = noticeNum;
 	}
 	public String getNoticeName() {
@@ -56,10 +56,10 @@ public class NoticeDTO {
 	public void setDay(Date day) {
 		this.day = day;
 	}
-	public Integer getViewTotal() {
+	public Long getViewTotal() {
 		return viewTotal;
 	}
-	public void setViewTotal(Integer viewTotal) {
+	public void setViewTotal(Long viewTotal) {
 		this.viewTotal = viewTotal;
 	}
 	

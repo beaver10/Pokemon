@@ -17,7 +17,6 @@
 			<h1 class="col-md-7 mx-auto text-center pb-4">Notice Add</h1>
 		</div>
 	
-		
 			<form action="./add" method="post">
 			<div class="row col-md-7 mx-auto">
 				
@@ -33,14 +32,14 @@
 				</div>
 				
 				<div class="mb-3">
-				    <label for="id" class="form-label">ID</label>
-				    <input type="text" name="id" class="form-control" id="Inputid" placeholder="ID 입력">
+				    <label for="id" class="form-label"></label>
+				    <input type="text" name="id" class="form-control" id="id" hidden="" value="${trainer.id }">
 			    </div>
 			    
-			    <div class="mb-3">
+<!-- 			    <div class="mb-3">
 				    <label for="day" class="form-label">DAY</label>
 				    <input type="date" name="day" class="form-control" id="Inputday" placeholder="DAY 입력">
-			    </div>
+			    </div> -->
 			   
 			    <div class="mb-3">
 				    <label for="viewTotal" class="form-label">조회수</label>

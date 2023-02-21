@@ -40,18 +40,40 @@
     FROM NOTICE
     WHERE NOTICENUM = #{noticeNum}
     </select>
+    
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
      <delete id="setNoticeDelete" parameterType="Long">
-     DELETE NOTICE WHERE QNANUM = #{noticeNum}
+     DELETE NOTICE WHERE NOTICENUM = #{noticeNum}
      </delete>
+     
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
+     
+     <resultMap type="NoticeDTO" id="noticeDetailResult">
+     	<id column="NOTICENUM" property="noticeNum"/>
+     	<result column="NOTICENAME" property="noticeName"/>
+     	<result column="NOTICEDETAIL" property="noticeDetail"/>
+      	<result column="ID" property="id"/>
+      	<result column="DAY" property="day"/>    	
+      	<result column="VIEWTOTAL" property="viewTotal"/>
+     	
+     	
+     </resultMap>
+     
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
      <insert id="setNoticeAdd" parameterType="NoticeDTO" > 
+       	<selectKey keyProperty="noticeNum" resultType="Long" order="BEFORE">
+  			SELECT NOTICE_SEQ.NEXTVAL FROM DUAL
+  		</selectKey>
       INSERT INTO NOTICE
-      VALUES (NOTICE_SEQ.NEXTVAL,#{noticeName},#{noticeDetail},#{id},#{day},#{viewTotal})
+      VALUES (#{noticeNum}, #{noticeName},#{noticeDetail},#{id},sysdate,#{viewTotal})
      </insert>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
      <update id="setNoticeUpdate" parameterType="NoticeDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
-     	UPDATE QNA SET NOTICENAME=#{noticeName}, NOTICEDETAIL=#{noticeDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
+     	UPDATE NOTICE SET NOTICENAME=#{noticeName}, NOTICEDETAIL=#{noticeDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
 		WHERE NOTICENUM=#{noticeNum}     
      </update>
+     
+     
+     
+     
        </mapper>

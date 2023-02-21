@@ -29,7 +29,7 @@
  
  		<!-- Name input -->
 		 <div class="form-outline mb-4">
-          <input type="text" id="id" class="form-control" name="id" value="${dto.id }" >
+          <input type="text" id="id" class="form-control" name="id" value="${dto.id }" disabled="disabled" >
           <label class="form-label" for="id" style="margin-left: 0px;">ID</label>
         <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
 		

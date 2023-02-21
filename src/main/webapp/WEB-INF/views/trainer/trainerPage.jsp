@@ -26,11 +26,11 @@
 			<form>
 					<div class="form-group">
 						<label>아이디</label>
-						<input type="text" class="form-control" value="${dto.id}">
+						<input type="text" class="form-control" value="${dto.id}" disabled="disabled">
 					</div>
 					<div class="form-group">
 						<label>비밀번호</label>
-						<input type="text" class="form-control" value="${dto.pw}">
+						<input type="text" class="form-control" value="${dto.pw}" disabled="disabled">
 					</div>
 
 					<br>
