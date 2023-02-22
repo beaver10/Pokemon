@@ -17,7 +17,7 @@
 		</div>
 	<form action="./update" method="post">
 	<div class="row col-md-7 mx-auto">
-	<input type="hidden" name="noticeNum" value="${dto.noticeNum}">
+	<input type="hidden" name="num" value="${dto.num}">
 	<div class="mb-3">
 		<label for="noticeName" class="form-label">글제목</label>
 		<input type="text" name="noticeName" class="form-control" id="noticeName" value="${dto.noticeName }" >
@@ -33,7 +33,7 @@
 		<input type="text" name="day" class="form-control" id="day" value="${dto.day }" hidden="">
 	</div>
 	<div class="mb-3">
-		<input type="text" name="viewTotal" class="form-control" id="viewTotal" value="${dto.viewTotal }" hidden="">
+		<input type="text" name="hit" class="form-control" id="hit" value="${dto.hit }" hidden="">
 	</div>		
 	<div class="row col-md-5 mx-auto mt-5">
 		<button type="submit" class="btn btn-outline-secondary">상품수정</button>
@@ -56,7 +56,7 @@
 	
 	<form action="./update" method="post">
 			
-			<input type="hidden" name="noticeNum" value="${dto.noticeNum}">
+			<input type="hidden" name="num" value="${dto.num}">
 		
 			
 			<fieldset>
@@ -82,7 +82,7 @@
 			
 			<fieldset>
 				<legend>조회수</legend>
-				<input type="text" name="viewTotal"value="${dto.viewTotal}" hidden="">
+				<input type="text" name="hit"value="${dto.hit}" hidden="">
 			</fieldset>
 			
 			

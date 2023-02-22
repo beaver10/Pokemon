@@ -38,13 +38,13 @@
 			    </div>
 			    
 			    <div class="mb-3">
-				    <label for="day" class="form-label">DAY</label>
-				    <input type="text" name="day" class="form-control" id="Inputday" placeholder="DAY 입력">
+				    <label for="regdate" class="form-label">regdate</label>
+				    <input type="text" name="regdate" class="form-control" id="Inputregdate" placeholder="regdate 입력">
 			    </div>
 			   
 			    <div class="mb-3">
-				    <label for="viewTotal" class="form-label">조회수</label>
-				    <input type="text" name="viewTotal" class="form-control" id="InputviewTotal" placeholder="0을 입력해주세요">
+				    <label for="hit" class="form-label">조회수</label>
+				    <input type="text" name="hit" class="form-control" id="Inputhit" placeholder="0을 입력해주세요">
 			    </div>
 				
 				

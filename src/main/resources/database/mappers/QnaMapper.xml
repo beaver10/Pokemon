@@ -47,11 +47,11 @@
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
      <insert id="setQnaAdd" parameterType="QnaDTO" > 
       INSERT INTO QNA
-      VALUES (QNA_SEQ.NEXTVAL,#{qnaName},#{qnaDetail},#{id},#{day},#{viewTotal})
+      VALUES (QNA_SEQ.NEXTVAL,#{qnaName},#{qnaDetail},#{id},#{regdate},#{hit})
      </insert>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
      <update id="setQnaUpdate" parameterType="QnaDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
-     	UPDATE QNA SET QNANAME=#{qnaName}, QNADETAIL=#{qnaDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
+     	UPDATE QNA SET QNANAME=#{qnaName}, QNADETAIL=#{qnaDetail}, ID=#{id}, regdate=#{regdate}, hit=#{hit}
 		WHERE QNANUM=#{qnaNum}     
      </update>
        

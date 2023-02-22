@@ -5,12 +5,12 @@ import java.sql.Date;
 
 public class NoticeDTO {
 	
-	private Long noticeNum;
-	private String noticeName;
-	private String noticeDetail;
+	private Long num;
+	private String title;
+	private String contents;
 	private String id;
-	private Date day;
-	private Long viewTotal;
+	private Date regdate;
+	private Long hit;
 	private TrainerDTO trainerDTO;
 	
 
@@ -31,36 +31,36 @@ public class NoticeDTO {
 	public void setTrainerDTO(TrainerDTO trainerDTO) {
 		this.trainerDTO = trainerDTO;
 	}
-	public Long getNoticeNum() {
-		return noticeNum;
+	public Long getNum() {
+		return num;
 	}
-	public void setNoticeNum(Long noticeNum) {
-		this.noticeNum = noticeNum;
+	public void setNum(Long num) {
+		this.num = num;
 	}
-	public String getNoticeName() {
-		return noticeName;
+	public String getTitle() {
+		return title;
 	}
-	public void setNoticeName(String noticeName) {
-		this.noticeName = noticeName;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getNoticeDetail() {
-		return noticeDetail;
+	public String getContents() {
+		return contents;
 	}
-	public void setNoticeDetail(String noticeDetail) {
-		this.noticeDetail = noticeDetail;
+	public void setContents(String contents) {
+		this.contents = contents;
 	}
 
-	public Date getDay() {
-		return day;
+	public Date getRegdate() {
+		return regdate;
 	}
-	public void setDay(Date day) {
-		this.day = day;
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
 	}
-	public Long getViewTotal() {
-		return viewTotal;
+	public Long getHit() {
+		return hit;
 	}
-	public void setViewTotal(Long viewTotal) {
-		this.viewTotal = viewTotal;
+	public void setHit(Long hit) {
+		this.hit = hit;
 	}
 	
 	

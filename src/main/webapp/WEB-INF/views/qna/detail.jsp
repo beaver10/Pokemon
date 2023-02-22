@@ -14,8 +14,8 @@
 		<h3>글제목 : ${dto.qnaName }</h3>
 		<h3>글내용 : ${dto.qnaDetail }</h3>
 		<h3>작성자 : ${dto.id }</h3>
-		<h3>작성날짜 : ${dto.day }</h3>
-		<h3>조회수 : ${dto.viewTotal }</h3>
+		<h3>작성날짜 : ${dto.regdate }</h3>
+		<h3>조회수 : ${dto.hit }</h3>
 		<a href="./delete?qnaNum=${dto.qnaNum}">상품삭제</a>
 	</c:if>
 	

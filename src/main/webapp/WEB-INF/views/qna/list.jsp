@@ -37,8 +37,8 @@
 			      <td class="tb1_td"><a>${pageScope.dto.qnaName}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.qnaDetail}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.id}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.day}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.viewTotal}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.regdate}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.hit}</a></td>
 			   </tr>
 		   </c:forEach>
 		

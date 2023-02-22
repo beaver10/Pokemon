@@ -8,8 +8,8 @@ public class QnaDTO {
 	private String qnaName;
 	private String qnaDetail;
 	private String id;
-	private String day;
-	private Integer viewTotal;
+	private String regdate;
+	private Integer hit;
 	private TrainerDTO trainerDTO;
 	
 	
@@ -38,17 +38,17 @@ public class QnaDTO {
 	public void setQnaDetail(String qnaDetail) {
 		this.qnaDetail = qnaDetail;
 	}
-	public String getDay() {
-		return day;
+	public String getregdate() {
+		return regdate;
 	}
-	public void setDay(String day) {
-		this.day = day;
+	public void setregdate(String regdate) {
+		this.regdate = regdate;
 	}
-	public Integer getViewTotal() {
-		return viewTotal;
+	public Integer gethit() {
+		return hit;
 	}
-	public void setViewTotal(Integer viewTotal) {
-		this.viewTotal = viewTotal;
+	public void sethit(Integer hit) {
+		this.hit = hit;
 	}
 	public TrainerDTO getTrainerDTO() {
 		return trainerDTO;

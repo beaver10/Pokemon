@@ -32,7 +32,7 @@ public class NoticeController {
 	
 	//detail
 	@RequestMapping(value = "detail", method = RequestMethod.GET) 
-	public ModelAndView getNoiceDetail(NoticeDTO noticeDTO)throws Exception{
+	public ModelAndView getNoticeDetail(NoticeDTO noticeDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		
 		noticeDTO = noticeService.getNoticeDetail(noticeDTO);

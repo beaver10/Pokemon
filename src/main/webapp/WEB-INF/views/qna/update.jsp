@@ -32,13 +32,13 @@
 			
 			
 			<fieldset>
-				<legend>DAY</legend>
-				<input type="text" name="day"value="${dto.day}">
+				<legend>regdate</legend>
+				<input type="text" name="regdate"value="${dto.regdate}">
 			</fieldset>
 			
 			<fieldset>
 				<legend>조회수</legend>
-				<input type="text" name="viewTotal"value="${dto.viewTotal}">
+				<input type="text" name="hit"value="${dto.hit}">
 			</fieldset>
 			
 			

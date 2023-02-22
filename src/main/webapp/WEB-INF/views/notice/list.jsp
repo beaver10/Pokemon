@@ -32,12 +32,12 @@
 		   
 		   <c:forEach items="${list}" var="dto">
 			   <tr>
-			      <td><a href="./detail?noticeNum=${dto.noticeNum}">${pageScope.dto.noticeNum}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.noticeName}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.noticeDetail}</a></td>
+			      <td><a href="./detail?num=${dto.num}">${pageScope.dto.num}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.title}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.contents}</a></td>
 			      <td class="tb1_td"><a>${pageScope.dto.id}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.day}</a></td>
-			      <td class="tb1_td"><a>${pageScope.dto.viewTotal}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.regdate}</a></td>
+			      <td class="tb1_td"><a>${pageScope.dto.hit}</a></td>
 			   </tr>
 		   </c:forEach>
 		
