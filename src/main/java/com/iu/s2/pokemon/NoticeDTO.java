@@ -5,25 +5,21 @@ import java.sql.Date;
 
 public class NoticeDTO {
 	
-	private Long noticeNum;
-	private String noticeName;
-	private String noticeDetail;
-	private String id;
-	private Date day;
-	private Long viewTotal;
+	private Long num;
+	private String title;
+	private String contents;
+	private String writer;
+	private Date regdate;
+	private Long hit;
 	private TrainerDTO trainerDTO;
 	
-
 	
 	
-	
-	
-	
-	public String getId() {
-		return id;
+	public String getwriter() {
+		return writer;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setwriter(String writer) {
+		this.writer = writer;
 	}
 	public TrainerDTO getTrainerDTO() {
 		return trainerDTO;
@@ -31,36 +27,36 @@ public class NoticeDTO {
 	public void setTrainerDTO(TrainerDTO trainerDTO) {
 		this.trainerDTO = trainerDTO;
 	}
-	public Long getNoticeNum() {
-		return noticeNum;
+	public Long getnum() {
+		return num;
 	}
-	public void setNoticeNum(Long noticeNum) {
-		this.noticeNum = noticeNum;
+	public void setnum(Long num) {
+		this.num = num;
 	}
-	public String getNoticeName() {
-		return noticeName;
+	public String gettitle() {
+		return title;
 	}
-	public void setNoticeName(String noticeName) {
-		this.noticeName = noticeName;
+	public void settitle(String title) {
+		this.title = title;
 	}
-	public String getNoticeDetail() {
-		return noticeDetail;
+	public String getcontents() {
+		return contents;
 	}
-	public void setNoticeDetail(String noticeDetail) {
-		this.noticeDetail = noticeDetail;
+	public void setcontents(String contents) {
+		this.contents = contents;
 	}
 
-	public Date getDay() {
-		return day;
+	public Date getregdate() {
+		return regdate;
 	}
-	public void setDay(Date day) {
-		this.day = day;
+	public void setregdate(Date regdate) {
+		this.regdate = regdate;
 	}
-	public Long getViewTotal() {
-		return viewTotal;
+	public Long gethit() {
+		return hit;
 	}
-	public void setViewTotal(Long viewTotal) {
-		this.viewTotal = viewTotal;
+	public void sethit(Long hit) {
+		this.hit = hit;
 	}
 	
 	

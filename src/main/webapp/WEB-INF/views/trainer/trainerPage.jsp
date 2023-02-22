@@ -26,7 +26,7 @@
 			<form>
 					<div class="form-group">
 						<label>아이디</label>
-						<input type="text" class="form-control" value="${dto.id}" disabled="disabled">
+						<input type="text" class="form-control" value="${dto.writer}" disabled="disabled">
 					</div>
 					<div class="form-group">
 						<label>비밀번호</label>

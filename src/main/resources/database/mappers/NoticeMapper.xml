@@ -6,13 +6,13 @@
 <mapper namespace="com.iu.s2.pokemon.NoticeDAO">
  <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@--> 
     <select id="getNoticeCount" parameterType="pager1" resultType="Long">
-  	 SELECT COUNT(NOTICENUM) FROM NOTICE
+  	 SELECT COUNT(NUM) FROM NOTICE
 	   	<if test="kind == 'contents'">
-	   	 	 WHERE NOTICEDETAIL   LIKE  '%' || #{search} || '%'
+	   	 	 WHERE contents   LIKE  '%' || #{search} || '%'
 	   	 </if>
 	   	 
 	   	 <if test="kind == 'title'">
-	   	 	WHERE NOTICENAME  LIKE  '%' || #{search} || '%'
+	   	 	WHERE title  LIKE  '%' || #{search} || '%'
 	   	 </if>
    </select>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
@@ -23,54 +23,54 @@
 				(
 					SELECT * FROM  NOTICE
 					 <if test="kind == 'contents'">
-   	 				 	WHERE NOTICEDETAIL   LIKE  '%' || #{search} || '%'
+   	 				 	WHERE contents   LIKE  '%' || #{search} || '%'
 				   	 </if>
 				   	 
 				   	 <if test="kind == 'title'">
-				   	 	WHERE NOTICENAME  LIKE  '%' || #{search} || '%'
+				   	 	WHERE title  LIKE  '%' || #{search} || '%'
 				   	 </if>
-					ORDER BY NOTICENUM DESC
+					ORDER BY NUM DESC
 				) N
 		)
 	WHERE  R BETWEEN  #{startRow} AND #{lastRow}
     </select>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
-    <select id="getNoticeDetail" parameterType="NoticeDTO" resultType="NoticeDTO">
+    <select id="getcontents" parameterType="NoticeDTO" resultType="NoticeDTO">
     SELECT *    
     FROM NOTICE
-    WHERE NOTICENUM = #{noticeNum}
+    WHERE NUM = #{NUM}
     </select>
     
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
      <delete id="setNoticeDelete" parameterType="Long">
-     DELETE NOTICE WHERE NOTICENUM = #{noticeNum}
+     DELETE NOTICE WHERE NUM = #{NUM}
      </delete>
      
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->       
      
-     <resultMap type="NoticeDTO" id="noticeDetailResult">
-     	<id column="NOTICENUM" property="noticeNum"/>
-     	<result column="NOTICENAME" property="noticeName"/>
-     	<result column="NOTICEDETAIL" property="noticeDetail"/>
-      	<result column="ID" property="id"/>
-      	<result column="DAY" property="day"/>    	
-      	<result column="VIEWTOTAL" property="viewTotal"/>
+     <resultMap type="NoticeDTO" id="contentsResult">
+     	<id column="num" property="num"/>
      	
+     	<result column="title" property="title"/>
+     	<result column="contents" property="contents"/>
+      	<result column="writer" property="writer"/>
+      	<result column="regdate" property="regdate"/>    	
+      	<result column="hit" property="hit"/>
      	
      </resultMap>
      
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->  
      <insert id="setNoticeAdd" parameterType="NoticeDTO" > 
-       	<selectKey keyProperty="noticeNum" resultType="Long" order="BEFORE">
+       	<selectKey keyProperty="num" resultType="Long" order="BEFORE">
   			SELECT NOTICE_SEQ.NEXTVAL FROM DUAL
   		</selectKey>
       INSERT INTO NOTICE
-      VALUES (#{noticeNum}, #{noticeName},#{noticeDetail},#{id},sysdate,#{viewTotal})
+      VALUES (#{NUM}, #{title},#{contents},#{writer},sysdate,#{hit})
      </insert>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
      <update id="setNoticeUpdate" parameterType="NoticeDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
-     	UPDATE NOTICE SET NOTICENAME=#{noticeName}, NOTICEDETAIL=#{noticeDetail}, ID=#{id}, DAY=#{day}, VIEWTOTAL=#{viewTotal}
-		WHERE NOTICENUM=#{noticeNum}     
+     	UPDATE NOTICE SET title=#{title}, contents=#{contents}, writer=#{writer}, regdate=#{regdate}, hit=#{hit}
+		WHERE NUM=#{NUM}     
      </update>
      
      

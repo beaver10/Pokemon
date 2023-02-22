@@ -18,32 +18,32 @@
 	<div class="row col-md-7 mx-auto">
 	<c:if test="${not empty dto}">
 	<div class="mb-3">
-		<label for="noticeNum" class="form-label">글번호</label>
-		<input type="text" name="noticeNum" class="form-control" id="noticeNum" value="${dto.noticeNum }" disabled="disabled">
+		<label for="num" class="form-label">글번호</label>
+		<input type="text" name="num" class="form-control" id="num" value="${dto.num }" disabled="disabled">
 	</div>	
 	<div class="mb-3">
-		<label for="noticeName" class="form-label">글제목</label>
-		<input type="text" name="noticeName" class="form-control" id="noticeName" value="${dto.noticeName }" disabled="disabled">
+		<label for="title" class="form-label">글제목</label>
+		<input type="text" name="title" class="form-control" id="title" value="${dto.title }" disabled="disabled">
 	</div>	
 	<div class="mb-3">
-		<label for="noticeDetail" class="form-label">글내용</label>
-		<input type="text" name="noticeDetail" class="form-control" id="noticeDetail" value="${dto.noticeDetail }" disabled="disabled">
+		<label for="contents" class="form-label">글내용</label>
+		<input type="text" name="contents" class="form-control" id="contents" value="${dto.contents }" disabled="disabled">
 	</div>	
 	<div class="mb-3">
-		<label for="id" class="form-label">작성자</label>
-		<input type="text" name="id" class="form-control" id="id" value="${dto.id }" disabled="disabled">
+		<label for="writer" class="form-label">작성자</label>
+		<input type="text" name="writer" class="form-control" id="writer" value="${dto.writer}" disabled="disabled">
 	</div>	
 	<div class="mb-3">
-		<label for="day" class="form-label">작성 날짜</label>
-		<input type="text" name="day" class="form-control" id="day" value="${dto.day }" disabled="disabled">
+		<label for="regdate" class="form-label">작성 날짜</label>
+		<input type="text" name="regdate" class="form-control" id="regdate" value="${dto.regdate }" disabled="disabled">
 	</div>
 	<div class="mb-3">
-		<label for="viewTotal" class="form-label">조회수</label>
-		<input type="text" name="viewTotal" class="form-control" id="viewTotal" value="${dto.viewTotal }" disabled="disabled">
+		<label for="hit" class="form-label">조회수</label>
+		<input type="text" name="hit" class="form-control" id="hit" value="${dto.hit }" disabled="disabled">
 	</div>		
 	<div class="row col-md-5 mx-auto mt-5">
-		<a href="./delete?noticeNum=${dto.noticeNum}" class="btn btn-outline-secondary">상품삭제</a>
-		<a href="./update?noticeNum=${dto.noticeNum}" class="btn btn-outline-secondary">상품수정</a>
+		<a href="./delete?Num=${dto.Num}" class="btn btn-outline-secondary">상품삭제</a>
+		<a href="./update?Num=${dto.Num}" class="btn btn-outline-secondary">상품수정</a>
 		<a href="./list" class="btn btn-outline-secondary">목록으로</a>
 	
 	</div>
@@ -52,7 +52,7 @@
 	<c:if test="${empty dto}">
 			<h3>존재하지 않는 상품입니다.</h3>
 	<div class="row col-md-5 mx-auto">
-	<a href="./update?noticeNum=${dto.noticeNum}" class="btn btn-outline-secondary">상품수정</a>
+	<a href="./update?Num=${dto.Num}" class="btn btn-outline-secondary">상품수정</a>
 	<a href="./list" class="btn btn-outline-secondary">목록으로</a>
 	</div>
 	</c:if>

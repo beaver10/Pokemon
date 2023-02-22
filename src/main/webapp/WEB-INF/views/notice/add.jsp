@@ -22,18 +22,18 @@
 				
 				
 				<div class="mb-3">
-				    <label for="noticeName" class="form-label">글제목</label>
-				    <input type="text" name="noticeName" class="form-control" id="noticeName" placeholder="글제목 입력">
+				    <label for="title" class="form-label">글제목</label>
+				    <input type="text" name="title" class="form-control" id="title" placeholder="글제목 입력">
 			    </div>
 				
 				<div class="mb-3">
-				  <label for="noticeDetail" class="form-label">글내용</label>
-				  <textarea class="form-control" name="noticeDetail" id="FormControlnoticeDetail" placeholder="글내용 입력" rows="3"></textarea>
+				  <label for="contents" class="form-label">글내용</label>
+				  <textarea class="form-control" name="contents" id="FormControlcontents" placeholder="글내용 입력" rows="3"></textarea>
 				</div>
 				
 				<div class="mb-3">
 				    <label for="id" class="form-label"></label>
-				    <input type="text" name="id" class="form-control" id="id" hidden="" value="${trainer.id }">
+				    <input type="text" name="writer" class="form-control" id="writer" hidden="" value="${trainer.writer }">
 			    </div>
 			    
 <!-- 			    <div class="mb-3">
@@ -42,8 +42,8 @@
 			    </div> -->
 			   
 			    <div class="mb-3">
-				    <label for="viewTotal" class="form-label">조회수</label>
-				    <input type="text" name="viewTotal" class="form-control" id="InputviewTotal" placeholder="0을 입력해주세요">
+				    <label for="hit" class="form-label">조회수</label>
+				    <input type="text" name="hit" class="form-control" id="Inputhit" placeholder="0을 입력해주세요">
 			    </div>
 				
 				

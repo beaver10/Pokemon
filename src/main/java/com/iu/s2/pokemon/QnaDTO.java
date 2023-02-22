@@ -4,12 +4,12 @@ import oracle.sql.DATE;
 
 public class QnaDTO {
 	
-	private Integer qnaNum;
+	private Long qnaNum;
 	private String qnaName;
 	private String qnaDetail;
 	private String id;
 	private String day;
-	private Integer viewTotal;
+	private Long viewTotal;
 	private TrainerDTO trainerDTO;
 	
 	
@@ -20,10 +20,10 @@ public class QnaDTO {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public Integer getQnaNum() {
+	public Long getQnaNum() {
 		return qnaNum;
 	}
-	public void setQnaNum(Integer qnaNum) {
+	public void setQnaNum(Long qnaNum) {
 		this.qnaNum = qnaNum;
 	}
 	public String getQnaName() {
@@ -44,10 +44,10 @@ public class QnaDTO {
 	public void setDay(String day) {
 		this.day = day;
 	}
-	public Integer getViewTotal() {
+	public Long getViewTotal() {
 		return viewTotal;
 	}
-	public void setViewTotal(Integer viewTotal) {
+	public void setViewTotal(Long viewTotal) {
 		this.viewTotal = viewTotal;
 	}
 	public TrainerDTO getTrainerDTO() {

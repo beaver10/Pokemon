@@ -17,23 +17,23 @@
 		</div>
 	<form action="./update" method="post">
 	<div class="row col-md-7 mx-auto">
-	<input type="hidden" name="noticeNum" value="${dto.noticeNum}">
+	<input type="hidden" name="num" value="${dto.num}">
 	<div class="mb-3">
-		<label for="noticeName" class="form-label">글제목</label>
-		<input type="text" name="noticeName" class="form-control" id="noticeName" value="${dto.noticeName }" >
+		<label for="title" class="form-label">글제목</label>
+		<input type="text" name="title" class="form-control" id="title" value="${dto.title }" >
 	</div>	
 	<div class="mb-3">
-		<label for="noticeDetail" class="form-label">글내용</label>
-		<input type="text" name="noticeDetail" class="form-control" id="noticeDetail" value="${dto.noticeDetail }" >
+		<label for="contents" class="form-label">글내용</label>
+		<input type="text" name="contents" class="form-control" id="contents" value="${dto.contents }" >
 	</div>	
 	<div class="mb-3">
-		<input type="text" name="id" class="form-control" id="id" value="${dto.id }" hidden="">
+		<input type="text" name="writer" class="form-control" id="writer" value="${dto.writer }" hidden="">
 	</div>	
 	<div class="mb-3">
-		<input type="text" name="day" class="form-control" id="day" value="${dto.day }" hidden="">
+		<input type="text" name="regdate" class="form-control" id="regdate" value="${dto.regdate }" hidden="">
 	</div>
 	<div class="mb-3">
-		<input type="text" name="viewTotal" class="form-control" id="viewTotal" value="${dto.viewTotal }" hidden="">
+		<input type="text" name="hit" class="form-control" id="hit" value="${dto.hit }" hidden="">
 	</div>		
 	<div class="row col-md-5 mx-auto mt-5">
 		<button type="submit" class="btn btn-outline-secondary">상품수정</button>
@@ -56,17 +56,17 @@
 	
 	<form action="./update" method="post">
 			
-			<input type="hidden" name="noticeNum" value="${dto.noticeNum}">
+			<input type="hidden" name="num" value="${dto.num}">
 		
 			
 			<fieldset>
 				<legend>글제목</legend>
-				<input type="text" name="noticeName" value="${dto.noticeName}" placeholder="글제목 입력">
+				<input type="text" name="title" value="${dto.title}" placeholder="글제목 입력">
 			</fieldset>
 			
 			<fieldset>
 				<legend>글내용</legend>
-				<textarea rows="" cols=""  name="noticeDetail">${dto.noticeDetail}</textarea> 
+				<textarea rows="" cols=""  name="contents">${dto.contents}</textarea> 
 			</fieldset>
 				
 			<fieldset>
@@ -76,13 +76,13 @@
 			
 			
 			<fieldset>
-				<legend>DAY</legend>
-				<input type="text" name="day"value="${dto.day}" hidden="">
+				<legend>regdate</legend>
+				<input type="text" name="regdate"value="${dto.regdate}" hidden="">
 			</fieldset>
 			
 			<fieldset>
 				<legend>조회수</legend>
-				<input type="text" name="viewTotal"value="${dto.viewTotal}" hidden="">
+				<input type="text" name="hit"value="${dto.hit}" hidden="">
 			</fieldset>
 			
 			

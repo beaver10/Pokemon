@@ -30,8 +30,8 @@
       <form action="./trainerLogin" method="post" style="width: 22rem;">
         <!-- id input -->
         <div class="form-outline mb-4">
-          <input type="text" id="id" class="form-control" name="id">
-          <label class="form-label" for="id"  style="margin-left: 0px;">ID</label>
+          <input type="text" id="writer" class="form-control" name="writer">
+          <label class="form-label" for="writer"  style="margin-left: 0px;">ID</label>
         <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 88.8px;"></div><div class="form-notch-trailing"></div></div></div>
 
         <!-- Password input -->

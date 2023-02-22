@@ -7,20 +7,20 @@
   
   <insert id="trainerJoin" parameterType="TrainerDTO">
   	INSERT INTO trainer 
-  	VALUES (#{id}, #{pw})
+  	VALUES (#{writer}, #{pw})
   </insert>
   
   
   <select id="getTrainerLogin" parameterType="TrainerDTO" resultType="TrainerDTO">
   	SELECT *
   	FROM trainer 
-  	WHERE ID  = #{id} 
+  	WHERE writer = #{writer} 
   </select>
   
   <update id="setTrainerUpdate" parameterType="TrainerDTO">
   	UPDATE trainer
-  	SET id = #{id}, pw = #{pw}
-	WHERE ID = #{id} 
+  	SET writer = #{writer}, pw = #{pw}
+	WHERE writer = #{writer} 
   </update>  
   
   
