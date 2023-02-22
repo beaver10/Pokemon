@@ -6,21 +6,21 @@
   <mapper namespace="com.iu.s2.trainer.trainerDAO">
   
   <insert id="trainerJoin" parameterType="TrainerDTO">
-  	INSERT INTO trainer 
-  	VALUES (#{writer}, #{pw})
+  	INSERT INTO TRAINER 
+  	VALUES (#{ID}, #{PW})
   </insert>
   
   
   <select id="getTrainerLogin" parameterType="TrainerDTO" resultType="TrainerDTO">
   	SELECT *
-  	FROM trainer 
-  	WHERE writer = #{writer} 
+  	FROM TRAINER 
+  	WHERE ID = #{ID} 
   </select>
   
   <update id="setTrainerUpdate" parameterType="TrainerDTO">
-  	UPDATE trainer
-  	SET writer = #{writer}, pw = #{pw}
-	WHERE writer = #{writer} 
+  	UPDATE TRAINER
+  	SET ID = #{ID}, PW = #{PW}
+	WHERE ID = #{ID} 
   </update>  
   
   

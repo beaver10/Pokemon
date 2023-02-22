@@ -8,18 +8,18 @@ public class NoticeDTO {
 	private Long num;
 	private String title;
 	private String contents;
-	private String writer;
+	private String id;
 	private Date regdate;
 	private Long hit;
 	private TrainerDTO trainerDTO;
 	
 	
 	
-	public String getwriter() {
-		return writer;
+	public String getId() {
+		return id;
 	}
-	public void setwriter(String writer) {
-		this.writer = writer;
+	public void setId(String writer) {
+		this.id = writer;
 	}
 	public TrainerDTO getTrainerDTO() {
 		return trainerDTO;
@@ -27,13 +27,13 @@ public class NoticeDTO {
 	public void setTrainerDTO(TrainerDTO trainerDTO) {
 		this.trainerDTO = trainerDTO;
 	}
-	public Long getnum() {
+	public Long getNum() {
 		return num;
 	}
-	public void setnum(Long num) {
+	public void setNum(Long num) {
 		this.num = num;
 	}
-	public String gettitle() {
+	public String getitle() {
 		return title;
 	}
 	public void settitle(String title) {

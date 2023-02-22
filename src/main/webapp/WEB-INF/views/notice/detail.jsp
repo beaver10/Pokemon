@@ -30,8 +30,8 @@
 		<input type="text" name="contents" class="form-control" id="contents" value="${dto.contents }" disabled="disabled">
 	</div>	
 	<div class="mb-3">
-		<label for="writer" class="form-label">작성자</label>
-		<input type="text" name="writer" class="form-control" id="writer" value="${dto.writer}" disabled="disabled">
+		<label for="id" class="form-label">작성자</label>
+		<input type="text" name="id" class="form-control" id="id" value="${dto.id}" disabled="disabled">
 	</div>	
 	<div class="mb-3">
 		<label for="regdate" class="form-label">작성 날짜</label>

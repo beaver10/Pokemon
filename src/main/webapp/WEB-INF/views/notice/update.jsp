@@ -27,7 +27,7 @@
 		<input type="text" name="contents" class="form-control" id="contents" value="${dto.contents }" >
 	</div>	
 	<div class="mb-3">
-		<input type="text" name="writer" class="form-control" id="writer" value="${dto.writer }" hidden="">
+		<input type="text" name="id" class="form-control" id="id" value="${dto.id }" hidden="">
 	</div>	
 	<div class="mb-3">
 		<input type="text" name="regdate" class="form-control" id="regdate" value="${dto.regdate }" hidden="">

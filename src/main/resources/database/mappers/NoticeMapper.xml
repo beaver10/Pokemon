@@ -53,7 +53,7 @@
      	
      	<result column="title" property="title"/>
      	<result column="contents" property="contents"/>
-      	<result column="writer" property="writer"/>
+      	<result column="id" property="id"/>
       	<result column="regdate" property="regdate"/>    	
       	<result column="hit" property="hit"/>
      	
@@ -65,11 +65,11 @@
   			SELECT NOTICE_SEQ.NEXTVAL FROM DUAL
   		</selectKey>
       INSERT INTO NOTICE
-      VALUES (#{NUM}, #{title},#{contents},#{writer},sysdate,#{hit})
+      VALUES (#{NUM}, #{title},#{contents},#{id},sysdate,#{hit})
      </insert>
 <!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->     
      <update id="setNoticeUpdate" parameterType="NoticeDTO"> <!--Config 떄문에 BankBookDTO사용가능 -->
-     	UPDATE NOTICE SET title=#{title}, contents=#{contents}, writer=#{writer}, regdate=#{regdate}, hit=#{hit}
+     	UPDATE NOTICE SET title=#{title}, contents=#{contents}, id=#{id}, regdate=#{regdate}, hit=#{hit}
 		WHERE NUM=#{NUM}     
      </update>
      

@@ -33,7 +33,7 @@
 				
 				<div class="mb-3">
 				    <label for="id" class="form-label"></label>
-				    <input type="text" name="writer" class="form-control" id="writer" hidden="" value="${trainer.writer }">
+				    <input type="text" name="id" class="form-control" id="id" hidden="" value="${trainer.id }">
 			    </div>
 			    
 <!-- 			    <div class="mb-3">
